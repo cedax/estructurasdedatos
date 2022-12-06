@@ -1,0 +1,22 @@
+@import url('https://fonts.cdnfonts.com/css/roboto-mono');
+
+* {
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: normal;
+}
+
+body {
+    background-color:rgba(248,249,250)!important;;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.navbar {
+    font-size: .9em!important;
+}
+
+.navbar-brand {
+    font-size: 1em!important;
+}

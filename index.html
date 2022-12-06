@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lopez Arcila 3CM32</title>
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container" id="inicio">
+        <nav class="navbar navbar-expand-lg bg-light sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Estructuras de datos</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pilas">Pilas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#arboles">Arboles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#colas">Colas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#grafos">Grafos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#listas">Listas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="pilas">
+            <br><br>
+            <h3>Pilas</h3>
+
+            <p>
+                Una pila es una estructura para almacenar datos donde solo hay una forma para agregar elementos y estos se incorporan en un
+                orden determinado en una sola dirección (de inicio a fin). Las pilas operan bajo una modalidad llamada <b>LIFO</b>
+                (Last In First Out). Esto quiere decir, que siempre el último elemento agregado va a ser el primero que saquemos. <br>
+                Las pilas son útiles cuando necesitamos una estructura de dato que terminaremos desplegando de forma
+                cronológica de más a menos recientes (como por ejemplo una lista de últimos tweets o artículos). En este caso, el dato ingresado
+                más recientemente es el primero que sacaremos y mostraremos.
+            </p>
+
+            <h4>Metodos de una pila</h4>
+
+            <p>
+                Tradicionalmente, una pila debe contar con métodos que permitan agregar nuevos elementos, sacarlos y
+                revisarlos (uno o más).
+                Si bien al hacer una implementación propia, podemos llamar a estos métodos de cualquier forma, existe una
+                convención acordada de
+                usar las siguientes definiciones:
+                <ol>
+                    <li>push: Agrega un nuevo valor a la pila, ubicándolo al final de ésta.</li>
+                    <li>pop: Retorna el último valor ingresado a la pila, sacándolo de ésta.</li>
+                    <li>peek: Retorna el último valor ingresado a la pila, sin sacarlo de ésta.</li>
+                    <li>size: Retorna el número de elementos que contiene la pila.</li>
+                    <li>print: Muestra el contenido de la pila.</li>
+                </ol>
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoPilas" role="button" aria-expanded="false" aria-controls="codigoPilas">
+                        Mostrar codigo de ejemplo
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#videoPilas">
+                        Mostrar video de explicacion
+                    </button>
+                    
+                    <div class="modal fade" id="videoPilas" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    Proximamente
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse mt-4" id="codigoPilas">
+                <pre>
+                    <code class="language-javascript">
+                        class Stack {
+                            constructor() {
+                                this.stack = [];
+                            }
+                            
+                            push(element) {
+                                this.stack.push(element);
+                                return this.stack;
+                            }
+                            
+                            pop() {
+                                return this.stack.pop();
+                            }
+                            
+                            peek() {
+                                return this.stack[this.stack.length - 1];
+                            }
+                            
+                            size() {
+                                return this.stack.length;
+                            }
+                            
+                            print() {
+                                console.log(this.stack);
+                            }
+                        }
+                        
+                        const stack = new Stack();
+                        console.log(stack.size());
+                        console.log(stack.push('Christopher'));
+                        console.log(stack.push('Jared'));
+                        console.log(stack.size());
+                        stack.print();
+                        console.log(stack.peek());
+                        console.log(stack.pop());
+                        console.log(stack.peek());
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div id="arboles">
+            <br><br>
+            <h3>Arboles</h3>
+
+            <p>
+                Los árboles son una estructura de datos muy común, que se define de forma recursiva como una colección de nodos, empezando por
+                un nodo raíz, donde cada nodo es una estructura de datos que contiene un valor, y opcionalmente una lista de referencias a 
+                otros nodos (sus hijos), con la limitación de que ninguna referencia esté duplicada, y que ninguna apunte al nodo raíz. <br>
+                Los árboles se caracterizan por las relaciones padre/hijo. Cada hijo debe tener un padre y sólo un padre. En grafos no existe
+                este tipo de relación.
+            </p>
+
+            <center class="mt-4"><img src="./img/arboles.webp" alt="Arboles"></center>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoArboles" role="button" aria-expanded="false" aria-controls="codigoArboles">
+                        Mostrar codigo de ejemplo
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#videoArboles">
+                        Mostrar video de explicacion
+                    </button>
+                    
+                    <div class="modal fade" id="videoArboles" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    Proximamente
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse mt-4" id="codigoArboles">
+                <pre>
+                    <code class="language-javascript">
+                        function Node(value) {
+                            this.value = value;
+                            this.children = [];
+                        }
+                        
+                        function Tree() {
+                            this.root = null;
+                        }
+                        
+                        Tree.prototype.findBFS = function (value) {
+                            var queue = [this.root];
+                            while (queue.length) {
+                                var node = queue.shift();
+                                if (node.value === value) {
+                                    return node;
+                                }
+                                for (var i = 0; i < node.children.length; i++) {
+                                    queue.push(node.children[i]);
+                                }
+                            }
+                            return null;
+                        };
+                        
+                        Tree.prototype.add = function (value, toNodeValue) {
+                            var node = new Node(value);
+                            var parent = toNodeValue ? this.findBFS(toNodeValue) : null;
+                            if (parent) {
+                                parent.children.push(node);
+                            }
+                            else if (!this.root) {
+                                this.root = node;
+                            }
+                            else {
+                                throw new Error('Root node is already assigned');
+                            }
+                        };
+                        
+                        Tree.prototype.remove = function (value) {
+                            if (this.root.value === value) {
+                                this.root = null;
+                            }
+                            var queue = [this.root];
+                            while (queue.length) {
+                                var node = queue.shift();
+                                for (var i = 0; i < node.children.length; i++) {
+                                    if (node.children[i].value === value) {
+                                        node.children.splice(i, 1);
+                                    }
+                                    else {
+                                        queue.push(node.children[i]);
+                                    }
+                                }
+                            }
+                        };
+                        
+                        Tree.prototype.traverseBFS = function (fn) {
+                            var queue = [this.root];
+                            while (queue.length) {
+                                var node = queue.shift();
+                                fn && fn(node);
+                                for (var i = 0; i < node.children.length; i++) {
+                                    queue.push(node.children[i]);
+                                }
+                            }
+                        };
+                        
+                        Tree.prototype.traverseDFS = function (fn, method) {
+                            var current = this.root;
+                            if (method) {
+                                this['_' + method](current, fn);
+                            }
+                            else {
+                                this._preOrder(current, fn);
+                            }
+                        };
+                        
+                        Tree.prototype._preOrder = function (node, fn) {
+                            if (!node) {
+                                return;
+                            }
+                            fn && fn(node);
+                            for (var i = 0; i < node.children.length; i++) {
+                                this._preOrder(node.children[i], fn);
+                            }
+                        };
+                        
+                        Tree.prototype._postOrder = function (node, fn) {
+                            if (!node) {
+                                return;
+                            }
+                            for (var i = 0; i < node.children.length; i++) {
+                                this._postOrder(node.children[i], fn);
+                            }
+                            fn && fn(node);
+                        };
+                        
+                        // nuevo arbol
+                        var tree = new Tree();
+                        
+                        // añadimos nodos
+                        tree.add('ceo');
+                        tree.add('cto', 'ceo');
+                        tree.add('dev1', 'cto');
+                        tree.add('dev2', 'cto');
+                        tree.add('dev3', 'cto');
+                        tree.add('cfo', 'ceo');
+                        tree.add('accountant', 'cfo');
+                        tree.add('cmo', 'ceo');
+                        
+                        // eliminamos nodos
+                        //tree.remove('cto');
+                        
+                        // recorremos el árbol en profundidad
+                        console.log('traverseDFS');
+                        tree.traverseDFS(function (node) {
+                            console.log(node.value);
+                        }, 'postOrder');
+                        
+                        // recorremos el árbol en anchura
+                        console.log('traverseBFS');
+                        tree.traverseBFS(function (node) {
+                            console.log(node.value);
+                        });
+                        
+                        // buscamos un nodo
+                        console.log('findBFS');
+                        console.log(tree.findBFS('ceo'));
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div id="colas">
+            <br><br>
+            <h3>Colas</h3>
+
+            <p>
+                Una cola es una estructura que consta de varios elementos que se ordenan secuencialmente, del mismo modo que un array. Sin embargo,
+                solamente podremos agregar elementos a la cola por el final de la misma. Del mismo modo, solamente será posible eliminar elementos de la
+                parte delantera de la cola. <br>
+                Las colas funcionan exactamente igual que las del supermercado. El primero en esperar en la cola, será el primero en salir de ella.
+                El concepto del funcionamiento de las colas recibe el nombre de <b>FIFO</b> (First In, First Out).
+
+                <h4>Metodos de una cola</h4>
+
+                Las colas contienen por lo general los siguientes metodos
+                <ol>
+                    <li>add(): Este método agregará un nuevo elemento al final de la cola.</li>
+                    <li>remove(): Este método eliminará un elemento del inicio de la cola.</li>
+                </ol>
+
+                Usare metodos extra en mi ejemplo
+                <ol>    
+                    <li>Método isempty(): Este método comprueba si la cola está vacía.</li>
+                    <li>Método empty(): Este método eliminará todos los elementos de la cola.</li>
+                    <li>Método size(): Este método devuelve el número de elementos de la cola.</li>
+                </ol>
+            </p>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoColas" role="button" aria-expanded="false" aria-controls="codigoArboles">
+                        Mostrar codigo de ejemplo
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#videoColas">
+                        Mostrar video de explicacion
+                    </button>
+                    
+                    <div class="modal fade" id="videoColas" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    Proximamente
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse mt-4" id="codigoColas">
+                <pre>
+                    <code class="language-javascript">
+                        class Cola {
+                            #elementos = [];
+
+                            add = (elemento) => {
+                                return this.#elementos.splice(0, 0, elemento);
+                            }
+                            remove = () => {
+                                return this.#elementos.pop();
+                            }
+                            isempty = () => {
+                                return this.#elementos.length === 0;
+                            }
+                            empty = () => {
+                                this.#elementos.length = 0;
+                            }
+                            size = () => {
+                                return this.#elementos.length;
+                            }
+                        }
+
+                        const cola = new Cola();
+                        cola.add(1);
+                        cola.add(2);
+                        cola.add(3);
+                        console.log(cola.size()); //3
+
+                        console.log(cola.remove()); // 1
+                        console.log(cola.remove()); // 2
+                        console.log(cola.remove()); // 3
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div id="grafos">
+            <br><br>
+            <h3>Grafos</h3>
+
+            <p>
+                Los grafos son una estructura de datos formada por un grupo de nodos y ciertas conexiones entre esos nodos. A diferencia de
+                los árboles, los grafos no tienen nodos raíz ni nodos hojas, ni una cabeza o una cola. Los diferentes nodos están
+                conectados entre sí y no existe una conexión padre-hijo implícita entre ellos.
+            </p>
+            <center><img src="./img/grafo.webp" alt="Grafo"></center>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoGrafos" role="button" aria-expanded="false" aria-controls="codigoArboles">
+                        Mostrar codigo de ejemplo
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#videoGrafos">
+                        Mostrar video de explicacion
+                    </button>
+                    
+                    <div class="modal fade" id="videoGrafos" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    Proximamente
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse mt-4" id="codigoGrafos">
+                <pre>
+                    <code class="language-javascript">
+                        class Graph{
+                            constructor() {
+                                this.adjacencyList = {}
+                            }
+                            
+                            addNode(node) {
+                                if (!this.adjacencyList[node]) this.adjacencyList[node] = []
+                            }
+                            
+                            addConnection(node1,node2) {
+                                this.adjacencyList[node1].push(node2)
+                                this.adjacencyList[node2].push(node1)
+                            }
+                            
+                            removeConnection(node1,node2) {
+                                this.adjacencyList[node1] = this.adjacencyList[node1].filter(v => v !== node2)
+                                this.adjacencyList[node2] = this.adjacencyList[node2].filter(v => v !== node1)
+                            }
+
+                            removeNode(node){
+                                while(this.adjacencyList[node].length) {
+                                    const adjacentNode = this.adjacencyList[node].pop()
+                                    this.removeConnection(node, adjacentNode)
+                                }
+                                delete this.adjacencyList[node]
+                            }
+                        }
+
+                        const mexico = new Graph()
+                        mexico.addNode("Morelos")
+                        mexico.addNode("EdoMex")
+                        mexico.addNode("CiudadDeMexico")
+                        mexico.addNode("Hidalgo")
+                        mexico.addConnection("Morelos", "EdoMex")
+                        mexico.addConnection("EdoMex", "CiudadDeMexico")
+                        mexico.addConnection("CiudadDeMexico", "Hidalgo")
+
+                        console.log(mexico)
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div id="listas">
+            <br><br>
+            <h3>Listas</h3>
+
+            <p>
+                Una lista simple o lista simplemente encadenada, son estructuras de datos muy parecidas a los array, donde el acceso al
+                elemento o nodo , es a través de un puntero , a diferencia de un array donde este se accede a través de índices. En un array
+                los elementos están contiguos en lo que a memoria se refiere, en cambio en una lista pueden no estarlos , esto puede verse 
+                como una ventaja frente a los array, por ejemplo si agregamos un nuevo elemento en un array se verificará que haya un espacio
+                contiguo en memoria disponible para el nuevo elemento y en caso de no haberlo se movera el array completo hasta otro lugar en
+                memoria donde si haya un espacio completo, esto no sucede con las listas, los elementos pueden estar dispersos en memoria.
+                Otra ventaja, es que para ciertas operaciones como insertar en la mitad es constante en función del tiempo, por poner un ejemplo. <br>
+                Una lista está compuesta por nodos, donde cada uno se conecta con el nodo siguiente (salvo el último), esto quiere decir que no
+                puede ver para atrás o por quien fue enlazado. Siempre se tiene como referencia el puntero o inicio de lista llamado head, este
+                define el principio de la lista, sin este puntero de referencia no se podría acceder a la lista. El último nodo enlaza con NULL
+                y esto marca el fin de la lista.
+            </p>
+
+            <center><img src="./img/lista.webp" alt="Lista"></center>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoListas" role="button" aria-expanded="false" aria-controls="codigoListas">
+                        Mostrar codigo de ejemplo
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#videoListas">
+                        Mostrar video de explicacion
+                    </button>
+                    
+                    <div class="modal fade" id="videoListas" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    Proximamente
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse mt-4" id="codigoListas">
+                <pre>
+                    <code class="language-javascript">
+                        function Node(value) {
+                            this.value = value
+                            this.next = null
+                        }
+
+                        function LinkedList() {
+                            this.head = null
+                        }
+
+                        LinkedList.prototype.append = function (value, current = this.head) {
+                            if (this.head === null) {
+                                return this.head = new Node(value)
+                            }
+                            if (current.next === null) {
+                                return current.next = new Node(value)
+                            }
+                            this.append(value, current.next)
+                        }
+
+                        LinkedList.prototype.prepend = function (value) {
+                            if (this.head === null) {
+                                return this.head = new Node(value)
+                            }
+                            let newNode = new Node(value)
+                            newNode.next = this.head
+                            this.head = newNode
+                        }
+
+                        LinkedList.prototype.removeNode = function (value, current = this.head) {
+                            if (this.head === null) {
+                                return false
+                            }
+
+                            if (this.head.value === value) {
+                                return this.head = this.head.next
+                            }
+
+                            if (current.next !== null) {
+                                if (current.next.value === value) {
+                                    return current.next = current.next.next
+                                }
+                                this.removeNode(value, current.next)
+                            }
+                            return false
+                        }
+
+                        LinkedList.prototype.findNode = function (value, current = this.head) {
+                            if (this.head === null) {
+                                return false
+                            }
+
+                            if (current !== null) {
+                                if (current.value === value) {
+                                    return true
+                                } else {
+                                    return this.findNode(value, current.next)
+                                }
+                            }
+                            return false
+                        }
+
+                        LinkedList.prototype.peekNode = function (value) {
+                            if (this.head === null) {
+                                return false
+                            }
+                            return this.head
+                        }
+
+                        LinkedList.prototype.length = function (current = this.head, acum = 1) {
+                            if (this.head === null) {
+                                return 0
+                            }
+                            if (current.next !== null) {
+                                return this.length(current.next, acum = acum + 1)
+                            }
+                            return acum
+                        }
+
+                        let list = new LinkedList()
+
+                        list.append(1)
+                        list.append(2)
+                        list.append(3)
+
+                        console.log(list.peekNode())
+
+                        list.prepend(0)
+
+                        console.log(list.peekNode())
+
+                        console.log(list.findNode(3))
+
+                        list.removeNode(3)
+
+                        console.log(list.findNode(3))
+
+                        console.log(list.length())
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <script src="prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
