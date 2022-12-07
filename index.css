@@ -20,3 +20,15 @@ body {
 .navbar-brand {
     font-size: 1em!important;
 }
+
+.btn {
+    margin-bottom: 10px;
+}
+
+.modal-content {
+    width: 100vw;
+}
+
+.modal-dialog {
+    margin: 50px 0px!important;
+}

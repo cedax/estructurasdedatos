@@ -78,8 +78,8 @@
             </p>
 
             <div class="row">
-                <div class="col-md-6 mb-2">
-                    <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoPilas" role="button" aria-expanded="false" aria-controls="codigoPilas">
+                <div class="col-md-6">
+                    <a id="btnCodigoPilas" class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoPilas" role="button" aria-expanded="false" aria-controls="codigoPilas">
                         Mostrar codigo de ejemplo
                     </a>
                 </div>
@@ -92,7 +92,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    Proximamente
+                                    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/-ob1XC62xxs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
@@ -164,7 +164,7 @@
             <center class="mt-4"><img src="./img/arboles.webp" alt="Arboles"></center>
 
             <div class="row mt-4">
-                <div class="col-md-6 mb-2">
+                <div class="col-md-6">
                     <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoArboles" role="button" aria-expanded="false" aria-controls="codigoArboles">
                         Mostrar codigo de ejemplo
                     </a>
@@ -178,7 +178,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    Proximamente
+                                    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/6WgfX3pz2-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
@@ -354,7 +354,7 @@
             </p>
 
             <div class="row mt-4">
-                <div class="col-md-6 mb-2">
+                <div class="col-md-6">
                     <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoColas" role="button" aria-expanded="false" aria-controls="codigoArboles">
                         Mostrar codigo de ejemplo
                     </a>
@@ -368,7 +368,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    Proximamente
+                                    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/kT3exFaSRf0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
@@ -429,7 +429,7 @@
             </p>
             <center><img src="./img/grafo.webp" alt="Grafo"></center>
             <div class="row mt-4">
-                <div class="col-md-6 mb-2">
+                <div class="col-md-6">
                     <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoGrafos" role="button" aria-expanded="false" aria-controls="codigoArboles">
                         Mostrar codigo de ejemplo
                     </a>
@@ -443,7 +443,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    Proximamente
+                                    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/FPi5S-6ujzk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
@@ -520,10 +520,10 @@
                 y esto marca el fin de la lista.
             </p>
 
-            <center><img src="./img/lista.webp" alt="Lista"></center>
+            <center><img src="./img/lista.webp" alt="Lista" style="width: 100%;"></center>
 
             <div class="row mt-4">
-                <div class="col-md-6 mb-2">
+                <div class="col-md-6">
                     <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#codigoListas" role="button" aria-expanded="false" aria-controls="codigoListas">
                         Mostrar codigo de ejemplo
                     </a>
@@ -537,7 +537,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    Proximamente
+                                <center><iframe width="560" height="315" src="https://www.youtube.com/embed/C8T4qPRJhUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
@@ -658,6 +658,15 @@
 
     <script src="prism.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        let scrollHecho = false
+        document.getElementById("btnCodigoPilas").addEventListener("click", function () {
+            if(scrollHecho) return
+            window.scrollBy(0, 10 * 16);
+            scrollHecho = true
+        });
+    </script>
 </body>
 
 </html>
